@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Insumos.Api/Insumos.Api.csproj" />
+  <Project Path="Insumos.Application/Insumos.Application.csproj" />
+  <Project Path="Insumos.Domain/Insumos.Domain.csproj" />
+  <Project Path="Insumos.Infrastructure/Insumos.Infrastructure.csproj" />
+  <Project Path="Insumos.Tests/Insumos.Tests.csproj" />
+</Solution>
