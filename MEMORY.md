@@ -42,3 +42,12 @@
 - [x] **Tarea 8:** Exigir lógica de negocio 100% en Backend (preparado para futura unificación por microservicios) y estandarizar el Frontend con Design System Minimalista Pastel, Font Awesome Free y cero emoticones Unicode.
 - [x] **Tarea 9:** Migrar gobernanza de base de datos a **MySQL** (1 BD por área `<entorno>_<area>` + prefijo `<nombre>_` en tablas y `__EFMigrationsHistory_<nombre>`), restringir áreas permitidas a `contabilidad`, `rrhh`, `sistemas`, `comercial`, `almacen` y explicitar `ASPNETCORE_ENVIRONMENT` en `ci-cd.yml`.
 
+### Plan Aprobado: Aplicación Web de Gestión de Insumos (`app-almacen-insumos`)
+- **Área:** `almacen` (`local_almacen` | `qa_almacen` | `prod_almacen`)
+- **Prefijo de tablas e historial EF:** `insumos_*` | `__EFMigrationsHistory_insumos`
+- **Dominio:** Entidad `Insumo` (`Id`, `Codigo`, `Nombre`, `Stock`, `UnidadMedida`, `CreatedAtUtc`)
+- **Funcionalidades (sin login):** Registrar, listar y eliminar insumos. Toda validación de negocio (campos obligatorios, unicidad de `Codigo`, `Stock >= 0`) en Backend (`Domain` / `Application`).
+- [x] **Tarea 10:** Implementar Backend en `.NET 10` Clean Architecture (`Insumos.Domain`, `Insumos.Application`, `Insumos.Infrastructure`, `Insumos.Api`, `Insumos.Tests`) con MySQL, migración inicial EF Core, pruebas de arquitectura e integración (`xUnit`).
+- [x] **Tarea 11:** Implementar Frontend en React + TypeScript (`Node 26 LTS`) con `@fortawesome/fontawesome-free`, diseño minimalista pastel, cero emoticones Unicode y pruebas unitarias (`Vitest` + `@testing-library/react`).
+- [x] **Tarea 12:** Configurar `backend/Dockerfile`, `frontend/Dockerfile`, `frontend/nginx.conf` y `docker-compose.yml`, verificar tests y build (`dotnet test`, `npm test`, `npm run build`), actualizar documentación y crear/fusionar PR hacia `main`.
+
